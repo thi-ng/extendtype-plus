@@ -1,4 +1,4 @@
-(defproject thi.ng/extend-type-plus "0.1.0-SNAPSHOT"
+(defproject thi.ng/extendtype-plus "0.1.0-SNAPSHOT"
   :description  "Clojure/Clojurescript extend-type additions"
   :url          "http://example.com/FIXME"
 
