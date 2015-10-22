@@ -22,6 +22,10 @@ public class Vec2 implements IObj {
         this.meta = meta;
     }
 
+    public Vec2 addIdent() {
+        return this;
+    }
+
     public Vec2 addV2(Vec2 v) {
         return new Vec2(x + v.x, y + v.y, meta);
     }

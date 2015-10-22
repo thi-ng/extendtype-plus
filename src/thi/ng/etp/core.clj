@@ -8,9 +8,10 @@
                    (list 'number? a)
                    (list 'instance? type a)))
                args types)]
-    (if (< 1 (count check))
-      (cons 'thi.ng.etp.core/and* check)
-      (first check))))
+    (case (count check)
+      0 nil
+      1 (first check)
+      (cons 'thi.ng.etp.core/and* check))))
 
 (defn- build-ast
   [parent args spec]
@@ -25,7 +26,9 @@
            invoke (->> args
                        (cons (with-meta '_ {:tag (name parent)}))
                        (cons (symbol (str \. (last opt)))))]
-       (list (reduce #(cons %2 %) ast [invoke branch 'if]))))
+       (if branch
+         (list (reduce #(cons %2 %) ast [invoke branch 'if]))
+         (list invoke))))
    nil (reverse spec)))
 
 (defn- method-impl

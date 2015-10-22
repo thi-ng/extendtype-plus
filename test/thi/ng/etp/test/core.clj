@@ -12,12 +12,14 @@
  Vec2
  IMath
  (add
-  [[[Vec2 addV2] [:double addD]]
+  [[[addIdent]]
+   [[Vec2 addV2] [:double addD]]
    [[Vec2 Vec2 addV2V2]
     [Vec2 :double addV2D]
     [:double :double addDD]]]))
 
 (deftest test-all
+  (prn (add (Vec2. 1 2)))
   (prn (add (Vec2. 1 2) (Vec2. 100 200)))
   (prn (add (Vec2. 1 2) 100 200))
   (prn (add (Vec2. 1 2) (Vec2. 100 200) 1000))
