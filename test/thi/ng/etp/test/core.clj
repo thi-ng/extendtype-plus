@@ -21,4 +21,5 @@
   (prn (add (Vec2. 1 2) (Vec2. 100 200)))
   (prn (add (Vec2. 1 2) 100 200))
   (prn (add (Vec2. 1 2) (Vec2. 100 200) 1000))
-  (prn (add (Vec2. 1 2) 1000)))
+  (prn (add (Vec2. 1 2) 1000))
+  (prn (meta (add (with-meta (Vec2. 1 2) {:foo true}) 1000))))
